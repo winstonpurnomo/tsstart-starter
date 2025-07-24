@@ -30,6 +30,7 @@ pnpm dlx create-tsrouter-app --template https://github.com/winstonpurnomo/tsstar
 - Testing with [Vitest](https://vitest.dev) and Browser Mode.
   - Super-fast, Jest-compatible testing with hot reloading for tests
   - Browser mode lets you run tests in a browser environment and see your components in action
+  - Use regular Vitest for CI, and Vitest Browser for local testing -- make it easier to debug your tests while preventing CI from having to redownload Playwright
 - Modular, type-safe backend with [tRPC](https://trpc.io)
   - Easy-to-use, end-to-end type-safety for your backend
   - Modularity that makes it easy to change server frameworks if necessary, with built-in support for Nitro, Express, H3, Hono, Fastify, and more
@@ -85,7 +86,7 @@ tsstart-starter/
 |   ├── server/                 # Server-side utilities
 |   ├── test/                   # Testing utilities
 |   ├── router.tsx              # Server configuration
-|   ├── routeTree.gen.ts        # TanStack router auto-generated file
+|   ├── routeTree.gen.ts        # TanStack Router auto-generated file
 |   ├── styles.css              # Global styles
 |── .env.example                # Environment variables
 |── .gitignore                  # gitignore
@@ -95,7 +96,8 @@ tsstart-starter/
 ├── package.json                # Dependencies
 ├── tsconfig.json               # TypeScript configuration
 |── vite.config.ts              # Vite configuration
-|── vitest.config.mts           # Vitest configuration
+|── vitest.config.ts            # Vitest configuration
+|── vitest.browser.config.ts    # Vitest configuration for browser mode
 ```
 
 To customize the authentication flow, you can modify the `src/server/auth.ts` file, and its corresponding client caller in `src/lib/auth.ts`. Then, run `pnpm run auth:generate` to regenerate the database models.
