@@ -1,0 +1,83 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "extends": ["ultracite"],
+  "linter": {
+    "rules": {
+      "performance": {
+        /* Disabled because of valibot */
+        "noNamespaceImport": "off"
+      },
+      "nursery": {
+        "noUnknownAtRule": "off"
+      },
+      "style": {
+        /* Next.js specific rule -- this is not Next.js */
+        "noHeadElement": "off"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.test.tsx", "**/*.test.ts"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noExplicitAny": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["src/components/ui/**/*.tsx"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noNestedTernary": "off"
+          },
+          "suspicious": {
+            "noDocumentCookie": "off",
+            "noArrayIndexKey": "off"
+          },
+          "nursery": {
+            "noShadow": "off",
+            "noNestedComponentDefinitions": "off"
+          },
+          "security": {
+            "noDangerouslySetInnerHtml": "off"
+          },
+          "a11y": {
+            "useAriaPropsForRole": "off",
+            "useFocusableInteractive": "off",
+            "useSemanticElements": "off"
+          },
+          "complexity": {
+            "noExcessiveCognitiveComplexity": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/routeTree.gen.ts"],
+      "linter": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      },
+      "assist": {
+        "enabled": false
+      }
+    },
+    {
+      "includes": ["**/*.$.ts"],
+      "linter": {
+        "rules": {
+          "style": {
+            /* Incorrectly reports files named as `SOMEROUTE.$.ts` as not conforming to the naming convention */
+            "useFilenamingConvention": "off"
+          }
+        }
+      }
+    }
+  ]
+}
