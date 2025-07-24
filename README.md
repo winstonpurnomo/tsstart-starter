@@ -54,7 +54,7 @@ Then, run the development server:
 pnpm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can also run the tests:
 
@@ -69,7 +69,7 @@ tsstart-starter/
 ├── README.md
 |── src/
 |   ├── components/             # Reusable components
-|   |   |   ├── ui/             # shadcn/ui components
+|   |   ├── ui/                 # shadcn/ui components
 |   ├── db/                     # Database schema and config
 |   ├── hooks/                  # Custom React hooks
 |   ├── lib/                    # Client-side utilities
