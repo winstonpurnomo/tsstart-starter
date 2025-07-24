@@ -12,6 +12,7 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "auth:generate": "pnpm dlx @better-auth/cli generate --output src/db/schema/auth.schema.ts",
+    "test": "vitest",
     "test:browser": "vitest --config=vitest.browser.config.ts"
   },
   "dependencies": {

@@ -7,9 +7,8 @@ import {
   type RegisteredRouter,
   RouterProvider,
 } from '@tanstack/react-router';
-import { waitFor } from '@testing-library/react';
+import { type RenderOptions, render, waitFor } from '@testing-library/react';
 import { expect } from 'vitest';
-import { type ComponentRenderOptions, render } from 'vitest-browser-react';
 
 type Routes = RegisteredRouter['routesByPath'];
 
@@ -75,7 +74,7 @@ export const renderWithRouter = async <R extends keyof Routes>(
   }: {
     initialLocation?: string;
     mockRoute?: MockRoute<R>;
-  } & ComponentRenderOptions = {}
+  } & RenderOptions = {}
 ): Promise<void> => {
   render(
     <MockedRouter initialLocation={initialLocation} mockRoute={mockRoute}>

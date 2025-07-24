@@ -7,13 +7,7 @@ export default defineConfig({
   plugins: [tsConfigPaths(), tailwindCss(), react()],
   test: {
     environment: 'jsdom',
-    setupFiles: './src/test/browser.setup.ts',
-    browser: {
-      enabled: true,
-      provider: 'playwright',
-      // https://vitest.dev/guide/browser/playwright
-      instances: [{ browser: 'chromium' }],
-    },
-    css: true,
+    setupFiles: './src/test/setup.ts',
+    globals: true,
   },
 });

@@ -54,8 +54,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install Playwright
-        run: pnpm dlx playwright install --with-deps
-
       - name: Run Vitest
-        run: pnpm test:browser
+        run: pnpm test

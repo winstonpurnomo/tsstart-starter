@@ -1,1 +1,1 @@
-import '../styles.css';
+import '@testing-library/jest-dom';
